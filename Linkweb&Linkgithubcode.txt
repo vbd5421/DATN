@@ -1,0 +1,4 @@
+Link trang web : uav-ai.site
+Link github code: 
+1: https://github.com/vbd5421/DoAn_Frontend
+2: https://github.com/vbd5421/DoAn_Backend
