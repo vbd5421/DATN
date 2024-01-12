@@ -1,0 +1,9 @@
+.counter-number{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: white;
+}
+.counter-number::before{
+    content: "+";
+}

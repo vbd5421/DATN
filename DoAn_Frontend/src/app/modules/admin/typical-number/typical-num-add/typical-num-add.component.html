@@ -1,0 +1,70 @@
+<div class="toolbar">
+
+</div>
+<form [formGroup]="formNumber" (ngSubmit)="onSubmit()" class="was-validated mt_30">
+  <div class="container mb_60">
+    <div class="boder">
+      <div class="title">
+        <p class="text-title fs-5">CON SỐ TIÊU BIỂU</p>
+      </div>
+      <div class="mt_80">
+        <div class="row justify-content-center">
+          <div class="col-md-10 ">
+            <div class="row">
+              <div class="col-md-6 d-md-flex ">
+                <div class="box">
+                  <div class="box-icon">
+                    <span><i class="{{formNumber.controls['icons'].value}}"></i></span>
+                  </div>
+                  <div class="input-select-icon">
+                    <label for="icon" class="form-label required"> <span class="validateText">*</span>Biểu
+                      tượng</label>
+                    <select class="input-custom select-custom "
+                      [class.borderError]="!formNumber.controls.icons.valid&&!formNumber.controls.icons.untouched"
+                      [class.text-input]="formNumber.controls.icons.valid||formNumber.controls.icons.untouched"
+                      name="icon" id="icon" formControlName="icons">
+                      <option *ngFor="let icon of allIcon" [value]="icon.class"
+                        [innerHTML]="icon.name + ' ' + icon.code"></option>
+                    </select>
+                    <p *ngIf="!formNumber.controls.icons.valid&&!formNumber.controls.icons.untouched"
+                      class="validateText">Thông tin không thể bỏ trống</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mt-5 mt-lg-0 mx-md-0 mx-4 ">
+                  <label class="custom-field two w-100">
+                    <input placeholder="&nbsp;" class="w-100 input-field" name="number"
+                      [class.borderError]="!formNumber.controls.numberic.valid&&!formNumber.controls.numberic.untouched"
+                      [class.text-input]="formNumber.controls.numberic.valid||formNumber.controls.numberic.untouched"
+                      id="typeNumber" type="number" formControlName="numberic" />
+                    <span class="placeholder label-custom lh-base "><span class="validateText">*</span>số</span>
+                  </label>
+                  <p *ngIf="!formNumber.controls.numberic.valid&&!formNumber.controls.numberic.untouched"
+                    class="validateText mb-0">Thông tin không thể bỏ trống</p>
+                </div>
+                <div class="mt-4 mt-md-4 mx-md-0 mx-4 ">
+                    <label class="custom-field two w-100 mb-0 ">
+                      <textarea placeholder="&nbsp;" class="w-100 input-field " style="height: 150px;"
+                      [class.borderError]="!formNumber.controls.description.valid&&!formNumber.controls.description.untouched"
+                      [class.text-input]="formNumber.controls.description.valid||formNumber.controls.description.untouched"
+                      formControlName="description" id="description" name="description"></textarea>
+                      <span class="placeholder label-custom lh-base "><span class="validateText">*</span>mô tả</span>
+                    </label>
+                  <p *ngIf="!formNumber.controls.description.valid&&!formNumber.controls.description.untouched"
+                    class="validateText mb-0">Thông tin không thể bỏ trống</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-5 col-8 col-ms-6 mt-4 mb_30 mx-auto">
+                <button type="submit" class=" mt-2 mt-sm-0 btn btn-primary btn-lg btnn"
+                  [disabled]="!formNumber.valid">Lưu</button>
+                <button type="button" class=" mt-2 mt-sm-0 btn btn-secondary btn-lg  cancel"
+                  (click)="rollbackToList()">Hủy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

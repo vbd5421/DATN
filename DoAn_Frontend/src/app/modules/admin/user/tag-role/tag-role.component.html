@@ -1,0 +1,7 @@
+<span [ngSwitch]="codeRole">
+
+    <span class="status status_mod" *ngSwitchDefault>{{roleName}}</span>
+    <span class="status status_user" *ngSwitchCase="'USER'">USER</span>
+    <span class="status status_admin" *ngSwitchCase="'ADMIN'">ADMIN</span>
+  </span>
+  

@@ -1,0 +1,98 @@
+<div class="footer pt_60 pb_60 ">
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-4">
+                <div class="intro px-2 px-md-0 ">
+                    <!-- <div class="img-logo">
+                        <img src="assets/images/footer-logo.png" alt="">
+
+                    </div> -->
+                    <div class="title px-2 px-md-0 mt-4 mt-md-0 text-uppercase ">
+                        UAV - AI
+                    </div>
+                    <p class="lh-lg max-5line text-des " [innerHTML]="des" ></p>
+                    <div class="icon">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-square-x-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="title px-2 px-md-0 mt-4 mt-md-0 ">
+                    liên hệ chúng tôi
+                </div>
+                <div class="contact px-2 px-md-0 ">
+                    <p>
+                        <a href="tel:{{telephone}}">
+                            <span><i class="fa-solid fa-phone" ></i></span> <span [innerHTML]="telephone"></span>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="tel:{{fax}}">
+                            <span>
+                                <i class="fa-solid fa-fax"></i>
+                            </span> <span [innerHTML]="fax" ></span>
+                        </a>
+                    </p>
+                    <p>
+                        <a [href]="emailLink" >
+                            <span><i class="fas fa-envelope" ></i></span> <span [innerHTML]="email" ></span>
+                        </a>
+                    </p>
+                    <p *ngFor="let item of addressList" >
+                       <span><i class="fa-solid fa-location-dot"></i></span><span>{{item.address}},{{item.wards}},{{item.district}},{{item.city}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class=" px-2 px-md-0   mt-4 mt-md-0">
+                    <p class="title" >Bản đồ</p>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?width=817&amp;height=300&amp;hl=en&amp;q=trường đại học giao thông vận tải Số 3 cầu giấy&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+                            </iframe>
+                            <a href="https://connectionsgame.org/">Connections Puzzle</a>
+                        </div>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                width: 100%;
+                                height: 200px;
+                            }
+
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                width: 100%;
+                                height: 200px;
+                            }
+
+                            .gmap_iframe {
+                                height: 200px !important;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-dark">
+    <div class="container  ">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="banquyen">© Bản quyền 2023 | UAV-AI</p>
+            </div>
+        </div>
+    </div>
+</div>

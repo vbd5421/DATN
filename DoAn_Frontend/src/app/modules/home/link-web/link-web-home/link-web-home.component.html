@@ -1,0 +1,16 @@
+<div class="news-more">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="title-blog">
+                liên kết trang web
+            </div>
+            <div class="item-post" *ngFor="let item of listLinkWeb" >
+                
+                <a href="https://www.google.com/search?q={{item.url}}" target="_blank" >
+                    {{item.name}}
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>

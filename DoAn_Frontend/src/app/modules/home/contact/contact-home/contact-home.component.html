@@ -1,0 +1,121 @@
+<app-header></app-header>
+
+<div class="bg-light mt-header mb-3">
+    <nav aria-label="breadcrumb " class="py-3 py-2 container ">
+        <ol class="breadcrumb mb-0 text-capitalize ">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+        </ol>
+    </nav>
+</div>
+
+<section class="contact-section spad ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="contact-text">
+                    <p class="mb-2 pb-2 border-bottom fs-3 fw-bold text-capitalize text-dark">Thông tin liên hệ</p>
+                    <p>Vui lòng điền thông tin theo mẫu form bên cạnh để bộ phận tư
+                        vấn hỗ trợ của phòng thí nghiệm UAV-AI có thể hỗ trợ sớm nhất.</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="c-o">Địa chỉ:</td>
+                                <td>
+                                    <li class="address" *ngFor="let item of addressList" ><i class="fa-solid fa-location-dot me-1" ></i>{{item.address}},{{item.wards}},{{item.district}},{{item.city}}</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">SĐT:</td>
+                                <td>
+                                    <a class="contact-box" href="tel:{{telephone}}" [innerHTML]="telephone"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">Email:</td>
+                                <td>
+                                    <a class="contact-box" href="mailto:{{email}}" [innerHTML]="email" ></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="c-o">Fax:</td>
+                                <td>
+                                    <a class="contact-box" href="tel:{{fax}}" [innerHTML]="fax" ></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-7 ">
+                <form (ngSubmit)="onSubmit()" [formGroup]="formContact"  enctype="multipart/form-data"  novalidate class="contact-form mb_80 ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span><span class="text-danger">*</span> Họ và tên:</span>
+                            <input class="searchinput" type="text" placeholder="Nhập tên" 
+                                    formControlName="nameUser" 
+                                    [class.error-input]="!formContact.controls.nameUser.valid&&!formContact.controls.nameUser.untouched"
+                                    [class.valid-input]="formContact.controls.nameUser.valid||formContact.controls.nameUser.untouched"
+                                    >
+                                <p class="text-valid_error " *ngIf="!formContact.controls.nameUser.valid&&!formContact.controls.nameUser.untouched">Thông tin không thể bỏ trống</p>
+                        </div>
+                        <div class="col-md-12">
+                            <span><span class="text-danger">*</span>Email:</span>
+                            <input class="searchinput" type="email" placeholder="Nhập email" 
+                            formControlName="emailUser" 
+                            [class.error-input]="!formContact.controls.emailUser.valid&&!formContact.controls.emailUser.untouched"
+                            [class.valid-input]="formContact.controls.emailUser.valid||formContact.controls.emailUser.untouched"
+                            >
+                            <p class="text-valid_error " *ngIf="!formContact.controls.emailUser.valid&&!formContact.controls.emailUser.untouched">Thông tin không thể bỏ trống</p>
+                        </div>
+                        <div class="col-md-12">
+                            <span>Số điện thoại:</span>
+                            <input class="searchinput mb-2 " type="tel" placeholder="Nhập số điện thoại" [(ngModel)]="contact.phone"  (keypress)="numberOnly($event)"  [ngModelOptions]="{standalone: true}" >
+                        </div>
+                        <div class="col-md-12">
+                            <span><span class="text-danger" >*</span> Nội dung:</span>
+                            <textarea class="searchinput" placeholder="Nhập nội dung " 
+                            formControlName="contentUser" 
+                            [class.error-input]="!formContact.controls.contentUser.valid&&!formContact.controls.contentUser.untouched"
+                            [class.valid-input]="formContact.controls.contentUser.valid||formContact.controls.contentUser.untouched"
+                             ></textarea>
+                            <p class="text-valid_error " *ngIf="!formContact.controls.contentUser.valid&&!formContact.controls.contentUser.untouched">Thông tin không thể bỏ trống</p>
+                            <button class="btn-search  w-100" type="submit" [disabled]="!formContact.valid" >Gửi</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                    src="https://maps.google.com/maps?width=817&amp;height=300&amp;hl=en&amp;q=trường đại học giao thông vận tải Số 3 cầu giấy&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                </iframe>
+                <a href="https://connectionsgame.org/">Connections Puzzle</a>
+            </div>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    width: 100%;
+                    height: 300px;
+                }
+
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    width: 100%;
+                    height: 300px;
+                }
+
+                .gmap_iframe {
+                    width: 100% !important;
+                    height: 330px !important;
+                }
+            </style>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

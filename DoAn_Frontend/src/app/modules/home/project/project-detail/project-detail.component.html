@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="bg-light mt-header mb-3">
+    <nav aria-label="breadcrumb " class="py-3 py-2 container ">
+        <ol class="breadcrumb mb-0 text-capitalize ">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/du-an">dự án</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{project.name}}</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="news-detail mt-3 mt-md-4 mb-3 mb-md-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-news mb-2 mb-md-3 ">
+                            {{project.name}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="post-meta">
+                            <div class="post-date">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                {{project.date | date:'dd-MM-yyyy'}}
+                            </div>
+                            <div class="share text-right ">
+                                <a target="_blank" href="https://www.facebook.com/" class="icon-share  "
+                                    title="Chia sẻ Facebook">
+                                    <i class="fa-brands fa-square-facebook fb "></i>
+                                </a>
+                                <a target="_blank" href="https://twitter.com/" class="icon-share"
+                                    title="Chia sẻ Twitter">
+                                    <i class="fa-brands fa-square-x-twitter tw "></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="info-extend ">
+                            <p class="mb-1" ><span class="fw-bold text-capitalize">ngày triển khai: </span><span>{{project.createDate | date:'dd-MM-yyyy'}}</span> </p>
+                            <p class="mb-1" ><span class="fw-bold text-capitalize">thành viên: </span><span class="list-member" *ngFor="let item of project.members" >{{item.fullName}}</span></p>
+                        </div>
+                        <div class="post-content lh-base  ql-editor " [innerHTML]="content" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <app-link-web-home></app-link-web-home>
+                <div class="my-5"></div>
+                <img class="w-100" src="assets/images/utc-uav-ai/img-project2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

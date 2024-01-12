@@ -1,0 +1,124 @@
+<header>
+    <div id="navbar-header-home">
+        <div class="header-section d-lg-block d-none ">
+            <div class="header-top">
+                <div class="container h-100 ">
+                    <div class="row h-100 ">
+                        <div class="col-md-3 h-100  ">
+                            <a href="#" class="w-100 h-100 d-flex  align-content-center flex-wrap ">
+                                <img class="w-100  " src="assets/images/utc-uav-ai/logo_gvt_1.png" alt="logo-utc">
+                            </a>
+                        </div>
+                        <div class="col-md-7  h-100  d-flex flex-column justify-content-center flex-wrap ">
+                            <div class="name-web text-white ">
+                                <p class="name-viet fs-2  fw-bold ">nhóm nghiên cứu iot</p>
+                                <p class="name-eng fs-4 mb-0">uav-ai</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 h-100 ">
+                            <a href="" class="h-100 d-lg-block text-end">
+                                <img class="w-100 h-100" src="assets/images/utc-uav-ai/uav-logo.jpg" alt="uav-lgo">
+                                <!-- <img style=" max-height: 100%;  width: 80%;" src="../../../../../assets/images/iot.png" alt="logo"> -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg  p-0">
+                        <div class="navbar-nav">
+                            <div *ngFor="let itemNav of nav" class="margin-right-item-nav">
+                                <a href="{{itemNav.url}}" class="nav-item nav-link "
+                                    *ngIf="itemNav.navChild.length == 0">{{itemNav.name}}</a>
+                                <div class="nav-item dropdown" *ngIf="itemNav.navChild.length > 0 ">
+                                    <a href="{{itemNav.url}}" class="nav-link dropdown-toggle"
+                                        data-bs-toggle="dropdown">{{itemNav.name}}</a>
+                                    <div class="dropdown-menu bg-light py-0">
+                                        <a href="{{itemNav.url}}/{{navChild.url}}"
+                                            *ngFor="let navChild of itemNav.navChild" class="dropdown-item item-cus ">
+                                            {{navChild.name}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <i (click)="goToSearch(searchForm.searchInput)" class="icon-search fa-solid fa-magnifying-glass cur " id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <!-- <div class="dropdown-menu py-0 drop-custom " aria-labelledby="dropdownMenuButton1">
+                                <form action="" (ngSubmit)="goToSearch(searchForm.searchInput)" class="box-input-custom">
+                                    <input type="text" class="custom-input " name="searchForm.searchInput" placeholder="Tìm kiếm...">
+                                    <button class="" type="submit">
+                                        <i class=" fa-solid fa-magnifying-glass fa-fade"></i>
+                                    </button>
+                                </form>
+                            </div> -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile -->
+    <div id="nav-home-mobile">
+        <div class="header-section d-block d-lg-none mobile ">
+            <div class="container h-100">
+                <div class="menu-item-mobile">
+                    <div class="header-left ">
+                        <a href="#" class="w-100 h-100 d-block  ">
+                            <img class="img-logo-mobile my-2 " src="../../../../../assets/images/logo-mobile.png"
+                                alt="">
+                        </a>
+                    </div>
+
+                    <div class="header-right my-auto" id="icon-bar-header-mobile" >
+                        <div id="main-nav-mobile" class="icon-bar-mobile">
+                            <a onclick="openNav()"><i class="fas fa-bars "></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="mySidenav" class="sidenav">
+    <div class="sidenav-close ">
+        <a class="text-white fs-3" href="/">UAV-AI</a>
+        <a href="javascript:void(0)" class="closebtn  " onclick="closeNav()">&times;</a>
+    </div>
+    <ul class="p-0 menu-items mobile-menu">
+        <div *ngFor="let itemNav of nav" class="border-mobile">
+            <a href="{{itemNav.url}}" class="item-menu  nav-link"
+                *ngIf="itemNav.navChild.length == 0">{{itemNav.name}}</a>
+            <div *ngIf="itemNav.navChild.length>0" class="accordion accordion-flush item-child-mobile">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" >
+                        <a href="#flush-collapse{{itemNav.id}}" class="accordion-button collapsed  btn-item-question p-0  btn-item-menu-mobile " 
+                        data-bs-toggle="collapse" aria-expanded="false" >
+                            {{itemNav.name}}
+                        </a>
+                    </h2>
+                    <div id="flush-collapse{{itemNav.id}}" class="accordion-collapse collapse" 
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body menu-child-mobile">
+                            <a href="{{itemNav.url}}/{{navChild.url}}" class="dropdown-item item-cus-mobile "
+                                *ngFor="let navChild of itemNav.navChild">
+                                {{navChild.name}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <label class="custom-field two ">
+            <input type="text" placeholder="Tìm kiếm..." class=" input-field " 
+            name="searchInput" [(ngModel)]="searchForm.searchInput"  />
+            <button class="btn-search" (click)="goToSearch(searchForm.searchInput) " >
+                <i class="fs-4 fa-solid fa-magnifying-glass fa-fade" ></i>
+            </button>
+            
+        </label>
+    </ul>
+</div>

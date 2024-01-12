@@ -1,0 +1,333 @@
+
+
+.item-menu:hover{
+    cursor: pointer;
+} 
+
+/*  */
+#navbar-header-home {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #192a56;
+    display: block;
+    transition: top 0.3s;
+    z-index: 50;
+}
+
+
+/* header2 */
+.header-top{
+    height: 115px;
+}
+.name-web{
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+.name-viet{
+    margin-bottom: 5px;
+}
+
+
+.navbar {
+    padding: 0 !important;
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.margin-right-item-nav:not(:last-child){
+    margin-right: 25px;
+}
+
+.nav-item{
+    text-transform: capitalize;
+}
+.item-cus{
+    border-radius: 0px !important;
+    padding: 10px 10px;
+}
+.item-cus:hover{
+    background-color: #5e88ec;
+    color: white;
+}
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+/* mobile */
+
+.header-right #main-nav-mobile a{
+    cursor: pointer;
+}
+.mobile .header-right #main-nav-mobile{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(119, 119, 119);
+    padding: 0px  5px;
+    border-radius: 3px;
+}
+.mobile .header-right #main-nav-mobile:focus{
+    color: #000000;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    left: 0;
+    background-color: #192a56;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.sidenav .item-menu {
+    padding: 8px 8px 8px 22px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    text-transform: capitalize;
+}
+.border-mobile:not(:last-child){
+    border-bottom: 1px solid rgba(202, 202, 202, 0.638) ;
+}
+.sidenav-close {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff;
+}
+.sidenav .closebtn:hover {
+    color: #000000;
+}
+
+.sidenav .closebtn {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+#main-nav-mobile {
+    transition: .5s;
+}
+
+  .menu-item-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-menu li{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin: 9px 10px 0px 10px;
+    background: antiquewhite;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .mobile-menu li ul{
+    padding: 0;
+  }
+  .mobile-menu li:not(:last-child){
+    border-bottom:  1px dashed #5c5a5ab1; 
+  }
+
+  .mobile-menu li a, .mobile-menu li input {
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+  }
+
+.item-child-mobile{
+    
+}
+.btn-item-menu-mobile{
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: capitalize;
+    background: #192a56;
+    transition: 0.3s;
+    padding: 8px 8px 8px 22px !important;
+}
+
+.btn-item-menu-mobile:focus{
+    box-shadow: unset;
+}
+.menu-child-mobile{
+    padding-right: 0px;
+    padding-left: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.item-cus-mobile{
+    border-radius: 0px !important;
+    padding: 10px 10px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.item-cus-mobile:not(:last-child){
+    border-bottom: 1px solid rgba(202, 202, 202, 0.638);
+}
+.accordion-button::after{
+    background-color: white;
+}
+
+/*  
+
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}*/
+
+.navbar-nav .nav-link:visited, .nav-link:link {
+    color: rgba(255, 255, 255, .7);
+  }
+
+.navbar .navbar-nav .nav-link {
+    padding: 16px 10px;
+    /* color: rgba(255, 255, 255, .7); */
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: rgba(255, 255, 255, 1);
+}
+.navbar .navbar-nav  .nav-item:active{
+    color: rgba(255, 255, 255, 1)
+}
+/* mobile */
+.img-logo-mobile{
+    width: 150px;
+    height: 80px;
+}
+#nav-home-mobile{
+   background-color: #192a56;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   display: block;
+   transition: top 0.3s;
+   z-index: 50;
+}
+
+/* search */
+.custom-input{
+    border: none;
+    width: 100%;
+    padding-left: 9px;
+  }
+.drop-custom{
+    margin-top: 0;
+    left: 54%;
+    min-width: unset;
+    width: 150px !important;
+    transform: translateX(-50%);
+}
+.icon-search{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+}
+.box-input-custom{
+    position: relative;
+}
+.box-input-custom button{
+    position: absolute;
+    transform: translateY(-50%);
+    right: 1px;
+    top: 50%;
+    border: 0;
+    height: 24px;
+    background-color: white;
+}
+
+
+/* input css */
+
+
+.custom-field {
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    display: inline-block;
+    --field-padding: 12px;
+  }
+  .custom-field .btn-search{
+    border: none;
+    background-color: #fafafa;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 1px;
+    
+  }
+  
+  .custom-field .input-field {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: var(--field-padding);
+    border-radius: 3px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  
+  /* TWO */
+  .custom-field.two .input-field {
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background:
+      linear-gradient(90deg, #222, #222) center bottom/0 0.15em no-repeat,
+      linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.15em no-repeat,
+      linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  
+  .custom-field.two .input-field.dirty,
+  .custom-field.two .input-field:not(:placeholder-shown),
+  .custom-field.two .input-field:focus {
+    background-size: 100% 0.15em, 100% 0.1em, 100%;
+  }

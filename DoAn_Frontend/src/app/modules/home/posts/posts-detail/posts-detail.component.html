@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+<div class="bg-light mt-header mb-3">
+    <nav aria-label="breadcrumb " class="py-3 py-2 container ">
+        <ol class="breadcrumb mb-0 text-capitalize ">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="/tin-tuc">tin tức và sự kiện</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="news-detail mt-3 mt-md-4 mb-3 mb-md-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-news mb-2 mb-md-3 ">
+                            {{post.title}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="post-meta">
+                            <div class="post-date">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                {{post.date | date:'dd-MM-yyyy'}}
+                              </div>
+                            <div class="share text-right ">
+                                <a target="_blank"
+                                    href="https://www.facebook.com/"
+                                    class="icon-share  " title="Chia sẻ Facebook">
+                                    <i class="fa-brands fa-square-facebook fb "></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://twitter.com/intent/tweet?text={{post.title}}-UAV-AI&url={{baseURL}}/tin-tuc/{{post.url}}"
+                                    class="icon-share" title="Chia sẻ Twitter" >
+                                    <i class="fa-brands fa-square-x-twitter tw "></i>
+                                </a>
+                                <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&su={{post.title}}&body={{baseURL}}/tin-tuc/{{post.url}}" target="_blank"
+                                    class="icon-share" title="Chia sẻ Email" >
+                                    <i class="fa-solid fa-square-envelope email-icon "></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="post-content lh-base mt-1 mt-md-2 ql-editor "  [innerHTML]="content" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <app-posts-more></app-posts-more>
+                <div class="my-5"></div>
+                <app-link-web-home></app-link-web-home>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

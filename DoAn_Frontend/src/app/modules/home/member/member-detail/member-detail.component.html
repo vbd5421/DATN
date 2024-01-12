@@ -1,0 +1,97 @@
+<app-header></app-header>
+
+<div class="bg-light mt-header mb-3 mb-md-4">
+    <nav aria-label="breadcrumb " class="py-3 py-2 container ">
+        <ol class="breadcrumb mb-0 text-capitalize ">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="gioi-thieu/thanh-vien">đội ngũ nghiên cứu</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{member.fullName}}</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="title mb-3 mb-md-4 ">
+                <span>thông tin cơ bản</span>
+            </div>
+            <div class="row mb_30 ">
+                <div class="col-sm-3">
+                    <div class="image">
+                        <img class="w-100 h-100 rounded " src="{{imageURL}}" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <table class="table-info ">
+                        <tbody>
+                            <tr>
+                                <td class="r-o  title-info ">học và tên</td>
+                                <td>: {{member.fullName}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">năm sinh</td>
+                                <td>: {{member.birthDate | date:'dd-MM-yyyy'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">chức vụ</td>
+                                <td>: {{member.position}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">học vị</td>
+                                <td>: {{member.degree}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">năm tham gia</td>
+                                <td>: {{member.timeJoin | date:'dd-MM-yyyy'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">điện thoại</td>
+                                <td>: {{member.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td class="r-o title-info ">email liên hệ</td>
+                                <td>: {{member.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row mb_60 ">
+                <div class="title mb-3 mb-md-4 ">
+                    <span>dự án</span>
+                </div>
+                <ul class="ms-3 ms-md-4 ">
+                    <li *ngFor="let item of member.projectName">
+                        <div>{{item}}</div>
+                    </li>
+                    <li data-bs-toggle="collapse" class="edit-project mt-2 " href="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">thêm dự án</li>
+                </ul>
+                <div class="collapse" id="collapseExample">
+                    <ng-template #login>
+                        <div class="card card-body">
+                            <a href="login">Vui lòng đăng nhập để chỉnh sửa !</a>  <a href="login">Đăng Nhập</a>
+                        </div>
+                    </ng-template>
+                    <div *ngIf="username;else login">
+                        <div class="card-body p-2">
+                            <div class="form-outline mb-0">
+                                <textarea placeholder="Chỉnh sửa dự án của bạn tại đây..." name="externalProject"
+                                    class="form-control addproject " rows="3" ></textarea>
+                            </div>
+                            <div class=" text-center text-md-start mt-1 mt-md-2">
+                                <button  type="button" class="btn btn-addproject w-25">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-link-web-home></app-link-web-home>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

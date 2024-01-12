@@ -1,0 +1,55 @@
+.footer {
+    background-color:#222736;
+    color: #aaaab3 ;
+
+}
+.icon a{
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    color: #ffffff;
+    border: 1px solid #b4b4b4;
+    border-radius: 50%;
+    transition: all 0.3s;
+    display: inline-grid;
+    align-items: center;
+
+}
+.icon a:not(:last-child){
+    margin-right: 15px;
+}
+.icon a:hover{
+    background-color: #2c4583;
+}
+.icon a i{
+    font-size: 20px;
+}
+.intro  .img-logo{
+    margin-bottom: 20px;
+}
+/*  */
+.title{
+    text-transform: capitalize;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 13px;
+}
+.contact p span{
+    margin-right: 5px;
+    color: #aaaab3 ;
+}
+.contact p span:hover{
+    text-decoration: underline;
+}
+.banquyen{
+    color: #aaaab3 ;
+    margin-top: 1rem;
+}
+.text-des{
+    text-align: justify;
+}

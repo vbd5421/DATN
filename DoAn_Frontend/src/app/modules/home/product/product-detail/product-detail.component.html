@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="bg-light mt-header mb-3">
+    <nav aria-label="breadcrumb " class="py-3 py-2 container ">
+        <ol class="breadcrumb mb-0 text-capitalize ">
+            <li class="breadcrumb-item"><a class="text-primary" href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a class="text-primary" href="san-pham">sản phẩm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+        </ol>
+    </nav>
+</div>
+
+
+<div class="news-detail mt-3 mt-md-4 mb-4 mb-md-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-news mb-2 mb-md-3 ">
+                            {{product.title}}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="post-meta">
+                            <div class="post-date">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                 {{product.date | date:'dd-MM-yyyy'}}
+                              </div>
+                            <div class="share text-right ">
+                                <a target="_blank"
+                                    href="https://www.facebook.com/"
+                                    class="icon-share  " title="Chia sẻ Facebook">
+                                    <i class="fa-brands fa-square-facebook fb "></i>
+                                </a>
+                                <a target="_blank"
+                                    href="https://twitter.com/"
+                                    class="icon-share" title="Chia sẻ Twitter" >
+                                    <i class="fa-brands fa-square-x-twitter tw "></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="post-content lh-base mt-1 mt-md-2 " [innerHTML]="content" ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <app-product-more></app-product-more>
+                <div class="my-5"></div>
+                <app-link-web-home></app-link-web-home>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,33 @@
+
+.img-about{
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+}
+.title-about-us{
+    text-transform: uppercase;
+    color:#192a56 ;
+    font-size: 30px;
+    font-weight: 700;
+}
+.see-more{
+    text-transform: capitalize;
+    color: white;
+    background-color: #192a56;
+    padding: 10px  20px ;
+    border-radius: 25px;
+}
+.see-more:hover{
+    color: #192a56;
+    background: rgb(255, 255, 255);
+    border: 1px solid #192a56;
+    
+}
+.des-about-us{
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

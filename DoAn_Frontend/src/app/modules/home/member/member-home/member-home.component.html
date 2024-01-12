@@ -1,0 +1,83 @@
+<div class="d-none d-xl-block ">
+<div class=" bg-light mt_60 ">
+    <div class="container pt_40 pb_60 ">
+        <div class="row align-items-center">
+            <div class="col-lg-5  order-lg-last " [@myAnimation]="animationState" >
+                <div class=" border-bottom  mb-3 title-service text-center text-lg-start">đội ngũ nghiên cứu</div>
+                <p class="mb-4 member-intro" [innerHTML]="memberIntro" ></p>
+                    <div class="text-center  mt_30 " >
+                        <a class=" see-more " href="gioi-thieu/thanh-vien">xem thêm</a>
+                    </div>
+            </div>
+            <div class="col-lg-7 mt-lg-0 mt-4 " [@myAnimation2]="animationState" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-6 " *ngFor="let member of listMember | paginate:{
+                                id:'member',
+                                itemsPerPage: paging.size,
+                                currentPage: paging.page,
+                                totalItems: paging.totalRecord  } , let i = index"  >
+                                <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                    <a class="img-member_a" href="gioi-thieu/thanh-vien/chi-tiet">
+                                        <img class="img-member  p-4" src="{{baseURL}}/{{memberURL}}/image/{{member.id}}" alt="member-image">
+                                    </a>
+                                    <h5 class="mb-0 fw-bold ">{{member.fullName}}</h5>
+                                    <small>{{member.position}}</small>
+                                    <div class="d-flex justify-content-center mt-3">
+                                        <a href="gioi-thieu/thanh-vien/{{member.url}}">
+                                            <button class="btn btn-primary m-1 btn-see-more ">xem chi tiết</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="d-block d-xl-none">
+    <div class=" bg-light mt_60 ">
+        <div class="container pt_40 pb_60 ">
+            <div class="row align-items-center">
+                <div class="col-lg-5  order-lg-last ">
+                    <div class=" border-bottom  mb-3 title-service text-center text-lg-start">đội ngũ nghiên cứu</div>
+                    <p [innerHTML]="memberIntro"  class="mb-4 member-intro "></p>
+                        <div class="text-center  mt_30 " >
+                            <a class=" see-more " href="gioi-thieu/thanh-vien">xem thêm</a>
+                        </div>
+                </div>
+                <div class="col-lg-7 mt-lg-0 mt-4 ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-6 " *ngFor="let member of listMember | paginate:{
+                                    id:'member',
+                                    itemsPerPage: paging.size,
+                                    currentPage: paging.page,
+                                    totalItems: paging.totalRecord  } , let i = index"  >
+                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                        <a class="img-member_a" href="gioi-thieu/thanh-vien/chi-tiet">
+                                            <img class="img-member  p-4" src="{{baseURL}}/{{memberURL}}/image/{{member.id}}" alt="member-image">
+                                        </a>
+                                        <h5 class="mb-0 fw-bold ">{{member.fullName}}</h5>
+                                        <small>{{member.position}}</small>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <a href="gioi-thieu/thanh-vien/{{member.url}}">
+                                                <button class="btn btn-primary m-1 btn-see-more ">xem chi tiết</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

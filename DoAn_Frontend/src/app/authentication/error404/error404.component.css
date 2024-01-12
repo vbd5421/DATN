@@ -1,0 +1,25 @@
+.error{
+    background: #f7f7f7; 
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.back{
+    color: #192a56;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .3s linear;
+  }
+  .back:hover{
+    cursor: pointer;
+    color: #000000;
+    margin-left: 10px;
+
+  }
+  @media (min-width:992px) {
+    .error{
+        margin-top: 165px;
+    }
+}
